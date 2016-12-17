@@ -3,6 +3,10 @@ import os
 from django.conf import settings
 from django.core.files.base import File
 from django.http import HttpResponse, HttpResponseNotFound
+try:
+    from django.utils.deprecation import MiddlewareMixin
+except ImportError:
+    MiddlewareMixin = object
 
 class FileProvider(object):
       def get_response(self, response, **options):
@@ -35,7 +39,7 @@ PROVIDERS = {
  'apache': ApacheFileProvider,
 }
 
-class FileProviderMiddleware(object):
+class FileProviderMiddleware(MiddlewareMixin):
     def process_response(self, request, response):
         if response.get('X-File', "") != "":
             provider_name = getattr(settings, "FILEPROVIDER_NAME", "python")
