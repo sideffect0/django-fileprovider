@@ -10,9 +10,7 @@ except ImportError:
 
 class FileProvider(object):
       def get_response(self, response, **options):
-          if os.path.exists(response['X-File']):
-             return self._get_response(response, **options)
-          return HttpResponseNotFound("file not found")
+          return self._get_response(response, **options)
 
       def _get_response(self, response, **options):
           raise NotImplemented
@@ -29,6 +27,9 @@ class ApacheFileProvider(FileProvider):
 
 class PythonFileProvider(FileProvider):
       def _get_response(self, response, **options):
+          # only need this checking when python file provider is given
+          if os.path.exists(response['X-File']):
+              return HttpResponseNotFound("file not found")
           with File(open(response['X-File'], 'rb')) as f:
               response =  HttpResponse(f.chunks()) 
           return response
