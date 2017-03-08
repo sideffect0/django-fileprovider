@@ -31,7 +31,8 @@ class PythonFileProvider(FileProvider):
           if not os.path.exists(response['X-File']):
               return HttpResponseNotFound("file not found")
           with File(open(response['X-File'], 'rb')) as f:
-              response =  HttpResponse(f.chunks()) 
+              response.content = f.chunks()
+              del response['X-File']
           return response
 
 PROVIDERS = {
