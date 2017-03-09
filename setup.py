@@ -1,6 +1,6 @@
 from setuptools import setup
 
-__version__  = '0.1a4'
+__version__  = '0.1a5'
 
 setup(
     name='django-fileprovider',
