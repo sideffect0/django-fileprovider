@@ -8,8 +8,8 @@ setup(
     description='django middleware for serving media files',
     author='Renjith Thankachan',
     author_email='mail3renjith@gmail.com',
-    url='https://bitbucket.org/renlinx007/django-file-provider',
-    download_url='https://bitbucket.org/renlinx007/django-fileprovider/get/0.1a4.tar.gz',
+    url='https://github.com/instapk/django-fileprovider.git',
+    download_url='https://github.com/instapk/django-fileprovider/archive/0.1a5.tar.gz',
     long_description=open('README.md', 'r').read(),
     packages=[
         'fileprovider',
