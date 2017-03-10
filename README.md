@@ -10,7 +10,7 @@ Currently it supports,
 # INSTALLATION  
 
   use pip to install package:  
-  `pip install -e git+https://github.com/instapk/django-fileprovider.git@0.1a5#egg=django-fileprovider`  
+  `pip install -e git+https://github.com/instapk/django-fileprovider.git@0.1#egg=django-fileprovider`  
 
 * add `fileprovider` to django `INSTALLED_APPS` section.  
 * add `fileprovider.middleware.FileProviderMiddleware` to `MIDDLEWARE_CLASSES` section
