@@ -34,10 +34,17 @@ class PythonFileProvider(FileProvider):
               response =  HttpResponse(f.chunks()) 
           return response
 
+# Uses lighthttpd X-Sendfile
+LightHttpdFileProvider = ApacheFileProvider
+# Uses X-Accel-Redirect
+CaddyFileProvider = NginxFileProvider
+
 PROVIDERS = {
  'python': PythonFileProvider,
  'nginx': NginxFileProvider,
  'apache': ApacheFileProvider,
+ 'lighthttpd': LightHttpdFileProvider,
+ 'caddy': CaddyFileProvider,
 }
 
 class FileProviderMiddleware(MiddlewareMixin):
