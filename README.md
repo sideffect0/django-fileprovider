@@ -1,3 +1,12 @@
+File handler for django, useful when you want to add control or logic to served files.  
+It uses `sendfile` supports on different servers and uses pythonic solution on django development server.  
+Currently it supports,  
+
+* Apache  
+* Nginx  
+* LightHttpd  
+* Caddy  
+
 # INSTALLATION  
 
   use pip to install package:  
@@ -5,7 +14,7 @@
 
 * add `fileprovider` to django `INSTALLED_APPS` section.  
 * add `fileprovider.middleware.FileProviderMiddleware` to `MIDDLEWARE_CLASSES` section
-* set django `settings` file with `FILEPROVIDER_NAME` any of  available providers {'python', 'nginx', 'apache'}
+* set django `settings` file with `FILEPROVIDER_NAME` any of  available providers {'python', 'nginx', 'apache', 'lighthttpd', 'caddy', }
 
 # USAGE  
 
