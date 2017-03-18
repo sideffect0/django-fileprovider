@@ -28,10 +28,11 @@ class ApacheFileProvider(FileProvider):
 class PythonFileProvider(FileProvider):
       def _get_response(self, response, **options):
           # only need this checking when python file provider is given
-          if os.path.exists(response['X-File']):
+          if not os.path.exists(response['X-File']):
               return HttpResponseNotFound("file not found")
           with File(open(response['X-File'], 'rb')) as f:
-              response =  HttpResponse(f.chunks()) 
+              response.content = f.chunks()
+              del response['X-File']
           return response
 
 # Uses lighthttpd X-Sendfile
