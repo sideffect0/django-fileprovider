@@ -14,7 +14,18 @@ Currently it supports,
 
 * add `fileprovider` to django `INSTALLED_APPS` section.  
 * add `fileprovider.middleware.FileProviderMiddleware` to `MIDDLEWARE_CLASSES` section
-* set django `settings` file with `FILEPROVIDER_NAME` any of  available providers {'python', 'nginx', 'apache', 'lighthttpd', 'caddy', }
+* set django `settings` file with `FILEPROVIDER_NAME` any of  available providers {'python', 'nginx', 'apache', 'lighthttpd', 'caddy', }  
+
+ ```python  
+    
+    # or you can put FILEPROVIDER_NAME as python in your local settings file  
+    if settings.DEBUG:
+        FILEPROVIDER_NAME = "python"
+    else:
+        # or apache, lighthttpd, caddy
+        FILEPROVIDER_NAME = "nginx"
+
+ ```
 
 # USAGE  
 
