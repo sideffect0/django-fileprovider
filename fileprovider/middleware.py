@@ -15,14 +15,16 @@ class FileProvider(object):
       def _get_response(self, response, **options):
           raise NotImplemented
 
-class NginxFileProvider(FileProvider):
+class XAccelFileProvider(FileProvider):
       def _get_response(self, response, **options):
           response['X-Accel-Redirect'] = response['X-File']
+          del response['X-File']
           return response
 
-class ApacheFileProvider(FileProvider):
+class XSendFileProvider(FileProvider):
       def _get_response(self, response, **options):
           response['X-Sendfile'] = response['X-File']
+          del response['X-File']
           return response
 
 class PythonFileProvider(FileProvider):
