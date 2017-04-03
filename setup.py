@@ -1,15 +1,15 @@
 from setuptools import setup
 
-__version__  = '0.1.1'
+__version__  = '0.1.2'
 
 setup(
     name='django-fileprovider',
     version=__version__,
-    description='django middleware for serving media files',
+    description='django middleware for serving media files ( or protect them )',
     author='Renjith Thankachan',
     author_email='mail3renjith@gmail.com',
     url='https://github.com/instapk/django-fileprovider.git',
-    download_url='https://github.com/instapk/django-fileprovider/archive/0.1.1.tar.gz',
+    download_url='https://github.com/instapk/django-fileprovider/archive/0.1.2.tar.gz',
     long_description=open('README.md', 'r').read(),
     packages=[
         'fileprovider',
