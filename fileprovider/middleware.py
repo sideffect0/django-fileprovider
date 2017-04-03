@@ -38,11 +38,12 @@ class PythonFileProvider(FileProvider):
           return response
 
 # Uses X-Sendfile
-LightHttpdFileProvider = ApacheFileProvider
-# Uses X-Sendfile
-HiawathaFileProvider = ApacheFileProvider
+ApacheFileProvider = XSendFileProvider
+LightHttpdFileProvider = XSendFileProvider
+HiawathaFileProvider = XSendFileProvider
 # Uses X-Accel-Redirect
-CaddyFileProvider = NginxFileProvider
+NginxFileProvider = XAccelFileProvider
+CaddyFileProvider = XAccelFileProvider
 
 PROVIDERS = {
  'python': PythonFileProvider,
@@ -51,8 +52,8 @@ PROVIDERS = {
  'lighthttpd': LightHttpdFileProvider,
  'caddy': CaddyFileProvider,
  'hiawatha': HiawathaFileProvider,
- 'xaccel': NginxFileProvider,
- 'xsendfile': ApacheFileProvider,
+ 'xaccel': XAccelFileProvider,
+ 'xsendfile': XSendFileProvider,
 }
 
 class FileProviderMiddleware(MiddlewareMixin):
