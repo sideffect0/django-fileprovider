@@ -35,8 +35,10 @@ class PythonFileProvider(FileProvider):
               del response['X-File']
           return response
 
-# Uses lighthttpd X-Sendfile
+# Uses X-Sendfile
 LightHttpdFileProvider = ApacheFileProvider
+# Uses X-Sendfile
+HiawathaFileProvider = ApacheFileProvider
 # Uses X-Accel-Redirect
 CaddyFileProvider = NginxFileProvider
 
@@ -46,6 +48,9 @@ PROVIDERS = {
  'apache': ApacheFileProvider,
  'lighthttpd': LightHttpdFileProvider,
  'caddy': CaddyFileProvider,
+ 'hiawatha': HiawathaFileProvider,
+ 'xaccel': NginxFileProvider,
+ 'xsendfile': ApacheFileProvider,
 }
 
 class FileProviderMiddleware(MiddlewareMixin):

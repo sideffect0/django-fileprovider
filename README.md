@@ -6,15 +6,17 @@ Currently it supports,
 * Nginx  
 * LightHttpd  
 * Caddy  
+* Hiawatha  
 
 # INSTALLATION  
 
   use pip to install package:  
-  `pip install -e git+https://github.com/instapk/django-fileprovider.git@0.1#egg=django-fileprovider`  
+  `pip install django-fileprovider`  
 
 * add `fileprovider` to django `INSTALLED_APPS` section.  
 * add `fileprovider.middleware.FileProviderMiddleware` to `MIDDLEWARE_CLASSES` section
-* set django `settings` file with `FILEPROVIDER_NAME` any of  available providers {'python', 'nginx', 'apache', 'lighthttpd', 'caddy', }  
+* set django `settings` file with `FILEPROVIDER_NAME` any of  available providers `python`, `nginx`, `apache`, `lighthttpd`, 
+`caddy`, `hiawatha`, `xsendfile`, `xaccel`.  
 
  ```python  
     
