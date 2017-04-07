@@ -2,7 +2,8 @@ import os
 
 from django.conf import settings
 from django.core.files.base import File
-from django.http import HttpResponse, HttpResponseNotFound
+from django.http import HttpResponse, HttpResponseNotFound, FileResponse
+
 try:
     from django.utils.deprecation import MiddlewareMixin
 except ImportError:
@@ -32,10 +33,7 @@ class PythonFileProvider(FileProvider):
           # only need this checking when python file provider is given
           if not os.path.exists(response['X-File']):
               return HttpResponseNotFound("file not found")
-          with File(open(response['X-File'], 'rb')) as f:
-              response.content = f.chunks()
-              del response['X-File']
-          return response
+          return FileResponse(open(response['X-File'], 'rb'))
 
 # Uses X-Sendfile
 ApacheFileProvider = XSendFileProvider
