@@ -1,4 +1,5 @@
 import os
+import six
 
 from django.conf import settings
 from django.core.files.base import File
@@ -56,7 +57,8 @@ PROVIDERS = {
 
 class FileProviderMiddleware(MiddlewareMixin):
     def process_response(self, request, response):
-        if response.get('X-File', "") != "":
+        filepath = response.get('X-File', "")
+        if filepath != "" and isinstance(filepath, six.string_types):
             provider_name = getattr(settings, "FILEPROVIDER_NAME", "python")
             # provider_option = getattr(settings, "DJM_ENABLE_CACHE", True)
             provider = PROVIDERS[provider_name]
