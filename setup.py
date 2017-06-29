@@ -1,7 +1,7 @@
 from setuptools import setup
 
-__version__  = '0.1.2'
-
+__version__  = '0.1.3'
+ 
 setup(
     name='django-fileprovider',
     version=__version__,
@@ -9,7 +9,7 @@ setup(
     author='Renjith Thankachan',
     author_email='mail3renjith@gmail.com',
     url='https://github.com/instapk/django-fileprovider.git',
-    download_url='https://github.com/instapk/django-fileprovider/archive/0.1.2.tar.gz',
+    download_url='https://github.com/instapk/django-fileprovider/archive/0.1.3.tar.gz',
     long_description=open('README.md', 'r').read(),
     packages=[
         'fileprovider',
@@ -18,6 +18,7 @@ setup(
     requires=[
     ],
     install_requires=[
+      'six>=1.10.0',
     ],
     classifiers=[
         'Environment :: Web Environment',
