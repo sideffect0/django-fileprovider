@@ -8,4 +8,4 @@ python:
   - "3.6"
   - "pypy"
 install: "pip install -r dev-requirements.txt"
-script: python -m pytest
+script: python setup.py test

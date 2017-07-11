@@ -20,6 +20,12 @@ setup(
     install_requires=[
       'six>=1.10.0',
     ],
+    setup_requires=[
+      'pytest-runner',
+    ],
+    tests_require=[
+      'pytest', 
+    ],
     classifiers=[
         'Environment :: Web Environment',
         'Framework :: Django',
