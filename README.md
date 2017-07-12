@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/instapk/django-fileprovider.svg?branch=master)](https://travis-ci.org/instapk/django-fileprovider)  
 
 File handler for django, useful when you want to add control or logic to served files.  
-It uses `sendfile` supports on different servers and uses pythonic solution on django development server.  
+It uses `sendfile` API supports on different servers and uses pythonic solution on django development server.  
 Currently it supports,  
 
 * Apache  
