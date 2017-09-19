@@ -33,7 +33,7 @@ Currently it supports,
 
 # USAGE  
 
- on django views where file response is required, fill response header `X-File` with absolute file path  
+ on django views where file response is required, fill response header `X-File` with absolute file path or use `sendfile` wrapper    
  for example,  
 
  ```python  
