@@ -37,9 +37,9 @@ Currently it supports,
  for example,  
 
  ```python  
-      
+
+    from fileprovider.utils import sendfile  
     def hello(request):
-        response = HttpResponse()
-        response['X-File'] = '/absolute/path/to/file'
-        return response
+        return sendfile('/absolute/path/to/file')
+
  ```
