@@ -42,4 +42,10 @@ Currently it supports,
     def hello(request):
         return sendfile('/absolute/path/to/file')
 
+    # can be used protecting file access from unauthorized users
+    @login_required
+    def hello(request, file_id):
+        file = get_object_or_404(FileModel, pk=file_id)
+        return sendfile(file.path)
+
  ```
