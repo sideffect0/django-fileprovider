@@ -8,6 +8,7 @@ Currently it supports,
 * Nginx  
 * LightHttpd  
 * Caddy  
+* Proxygen    
 * Hiawatha  
 
 # INSTALLATION  

@@ -43,6 +43,7 @@ HiawathaFileProvider = XSendFileProvider
 # Uses X-Accel-Redirect
 NginxFileProvider = XAccelFileProvider
 CaddyFileProvider = XAccelFileProvider
+ProxygenFileProvider = XAccelFileProvider
 
 PROVIDERS = {
  'python': PythonFileProvider,
@@ -51,6 +52,7 @@ PROVIDERS = {
  'lighthttpd': LightHttpdFileProvider,
  'caddy': CaddyFileProvider,
  'hiawatha': HiawathaFileProvider,
+ 'proxygen': ProxygenFileProvider,
  'xaccel': XAccelFileProvider,
  'xsendfile': XSendFileProvider,
 }
