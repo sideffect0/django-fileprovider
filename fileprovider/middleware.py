@@ -53,6 +53,7 @@ PROVIDERS = {
  'caddy': CaddyFileProvider,
  'hiawatha': HiawathaFileProvider,
  'proxygen': ProxygenFileProvider,
+ 'uwsgi': XSendFileProvider,
  'xaccel': XAccelFileProvider,
  'xsendfile': XSendFileProvider,
 }
