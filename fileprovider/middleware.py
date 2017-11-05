@@ -63,7 +63,8 @@ class FileProviderMiddleware(MiddlewareMixin):
         filepath = response.get('X-File', "")
         if filepath != "" and isinstance(filepath, six.string_types):
             provider_name = getattr(settings, "FILEPROVIDER_NAME", "python")
-            # provider_option = getattr(settings, "DJM_ENABLE_CACHE", True)
-            provider = PROVIDERS[provider_name]
+            provider  = getattr(settings, "FILEPROVIDER_BACKEND", None)
+            if not provider:
+               provider = PROVIDERS[provider_name]
             response =  provider().get_response(response)
         return response
