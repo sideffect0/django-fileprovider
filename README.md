@@ -16,6 +16,8 @@ Currently it supports,
   use pip to install package:  
   `pip install django-fileprovider`  
 
+   NOTE: if you are installing from github version consider checking [releases](https://github.com/sideffect0/django-fileprovider/releases)
+
 * add `fileprovider` to django `INSTALLED_APPS` section.  
 * add `fileprovider.middleware.FileProviderMiddleware` to `MIDDLEWARE_CLASSES` section
 * set django `settings` file with `FILEPROVIDER_NAME` any of  available providers `python`, `nginx`, `apache`, `lighthttpd`, 
