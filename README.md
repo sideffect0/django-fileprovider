@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/sideffect0/django-fileprovider.svg?branch=master)](https://travis-ci.org/instapk/django-fileprovider)  
+[![Downloads](https://pypip.in/download/django-fileprovider/badge.svg)](https://pypi.python.org/pypi/django-fileprovider/)
 
 File handler for django, useful when you want to add control or logic to served files.  
 It uses `sendfile` API supports on different servers and uses pythonic solution on django development server.  
