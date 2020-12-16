@@ -29,6 +29,12 @@ class XSendFileProvider(FileProvider):
           del response['X-File']
           return response
 
+class XReproxyFileProvider(FileProvider):
+      def _get_response(self, response, **options):
+          response['X-Reproxy-URL'] = response['X-File']
+          del response['X-File']
+          return response
+
 class PythonFileProvider(FileProvider):
       def _get_response(self, response, **options):
           # only need this checking when python file provider is given
@@ -44,6 +50,8 @@ HiawathaFileProvider = XSendFileProvider
 NginxFileProvider = XAccelFileProvider
 CaddyFileProvider = XAccelFileProvider
 ProxygenFileProvider = XAccelFileProvider
+ReproxyFileProvider = XReproxyFileProvider
+H2OFileProvider = ReproxyFileProvider
 
 PROVIDERS = {
  'python': PythonFileProvider,
@@ -53,6 +61,8 @@ PROVIDERS = {
  'caddy': CaddyFileProvider,
  'hiawatha': HiawathaFileProvider,
  'proxygen': ProxygenFileProvider,
+ 'reproxy': ReproxyFileProvider,
+ 'h2o': H2OFileProvider,
  'uwsgi': XSendFileProvider,
  'xaccel': XAccelFileProvider,
  'xsendfile': XSendFileProvider,
